@@ -1,0 +1,15 @@
+---
+layout: default
+---
+<article class="narrow">
+  <h1>{{ page.title }}</h1>
+  <p class="byline">By Laurenvo Pet Care USA &middot; {{ page.date | date: "%B %-d, %Y" }}</p>
+  {% if page.image %}
+  <img class="featured-img" src="{{ page.image }}" alt="{{ page.title }}">
+  {% endif %}
+  {{ content }}
+  <div class="shop-note">
+    Looking for supplies? Browse the <a href="https://www.laurenvo.com/shop/">Laurenvo shop</a> for pet accessories across the USA.
+  </div>
+  <p><a href="{{ '/' | relative_url }}">&larr; Back to all guides</a></p>
+</article>

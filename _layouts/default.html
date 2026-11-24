@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% if page.title %}{{ page.title }} | {% endif %}Laurenvo Pet Care USA</title>
+  <meta name="description" content="{{ page.description | default: site.description }}">
+  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+  {% seo %}
+  {% feed_meta %}
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="wordmark" href="{{ '/' | relative_url }}">Laurenvo <span>Pet Care USA</span></a>
+      <a class="btn-shop" href="https://www.laurenvo.com/shop/">Shop at Laurenvo</a>
+    </div>
+  </header>
+
+  <nav class="pill-nav" aria-label="Main navigation">
+    <div class="pill-nav-inner">
+      <a href="{{ '/' | relative_url }}">Home</a>
+      <a href="{{ '/dogs/' | relative_url }}">Dogs</a>
+      <a href="{{ '/cats/' | relative_url }}">Cats</a>
+      <a href="{{ '/aquarium/' | relative_url }}">Aquarium</a>
+      <a href="{{ '/types-of-dogs/' | relative_url }}">Types of Dogs</a>
+      <a href="{{ '/types-of-cats/' | relative_url }}">Types of Cats</a>
+      <a href="{{ '/types-of-freshwater-fishes/' | relative_url }}">Types of Freshwater Fishes</a>
+      <a class="shop-pill" href="https://www.laurenvo.com/shop/">Shop at Laurenvo</a>
+    </div>
+  </nav>
+
+  <main>
+    {{ content }}
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <h3>Laurenvo Pet Care USA</h3>
+      <p>Pet care tips, guides and product advice for dogs, cats and aquarium pets in the USA — from <a href="https://www.laurenvo.com/">Laurenvo</a>.</p>
+      <p><strong>Get new guides by email</strong><br>
+      Pop your email in below and we'll send you a quick note when a new guide goes live.</p>
+      <form class="newsletter-form" action="mailto:laurenvomarketingllc@gmail.com?subject=Subscribe%20to%20Laurenvo%20Pet%20Care%20USA" method="post" enctype="text/plain">
+        <input type="email" name="email" placeholder="Your email address" required aria-label="Email address">
+        <button type="submit">Subscribe</button>
+      </form>
+      <div class="footer-bottom">
+        &copy; {{ site.time | date: "%Y" }} Laurenvo Pet Care USA &middot; <a href="https://www.laurenvo.com/">laurenvo.com</a> &middot; <a href="{{ '/about/' | relative_url }}">About</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

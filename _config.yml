@@ -1,0 +1,26 @@
+title: Laurenvo Pet Care USA
+description: "Pet care tips, guides and product advice for dogs, cats and aquarium pets in the USA, from Laurenvo — https://www.laurenvo.com/"
+url: "https://laurenvopetcareusa.github.io"
+baseurl: ""
+author: Laurenvo Pet Care USA
+lang: en-US
+timezone: America/New_York
+
+markdown: kramdown
+permalink: /:year/:month/:day/:title/
+
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+
+exclude:
+  - README.md
+  - LICENSE
