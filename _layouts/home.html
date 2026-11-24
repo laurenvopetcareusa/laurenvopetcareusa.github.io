@@ -2,11 +2,14 @@
 layout: default
 ---
 <section class="hero">
+  <div class="bubbles" aria-hidden="true">
+    <span class="bubble"></span><span class="bubble"></span><span class="bubble"></span><span class="bubble"></span><span class="bubble"></span><span class="bubble"></span><span class="bubble"></span>
+  </div>
   <div class="hero-inner">
     <div class="hero-text">
       <span class="eyebrow">Pet care, USA</span>
-      <h1>Laurenvo Pet Care USA</h1>
-      <p>Practical, honest guides for dogs, cats and aquarium pets — written for pet owners across the United States.</p>
+      <h1>Happy pets,<br><em>happier homes.</em></h1>
+      <p>Straightforward guides for dogs, cats and aquarium pets — written for real life in the United States, no jargon, no fluff.</p>
       <div class="hero-ctas">
         <a class="btn-hero-shop" href="https://www.laurenvo.com/shop/">Shop at Laurenvo</a>
         <a class="btn-hero-read" href="#latest-guides">Read the latest guides</a>
@@ -16,39 +19,107 @@ layout: default
       <img src="https://images.unsplash.com/photo-1623387641168-d9803ddd3f35?auto=format&fit=crop&w=1200&q=80" alt="Cat and puppy together" loading="eager">
     </div>
   </div>
+  <svg class="wave" viewBox="0 0 1440 70" preserveAspectRatio="none" aria-hidden="true">
+    <path d="M0,40 C240,70 480,10 720,30 C960,50 1200,15 1440,40 L1440,70 L0,70 Z" fill="#E0F2F7" opacity="0.55"></path>
+    <path d="M0,55 C240,70 480,35 720,50 C960,65 1200,40 1440,55 L1440,70 L0,70 Z" fill="#ffffff"></path>
+  </svg>
 </section>
 
 <div class="trust-strip">Trusted pet care guides &middot; <span>Dogs</span> &middot; <span>Cats</span> &middot; <span>Aquarium</span> &middot; New guides every week</div>
 
-<section class="types-strip">
-  <h2>Browse by type</h2>
+{% assign featured = site.posts.first %}
+{% if featured %}
+<section class="section">
+  <div class="section-head">
+    <span class="kicker">Featured guide</span>
+    <h2>Start here</h2>
+  </div>
+  <article class="spotlight">
+    {% if featured.image %}
+    <a href="{{ featured.url | relative_url }}"><img src="{{ featured.image }}" alt="{{ featured.title }}"></a>
+    {% endif %}
+    <div class="spotlight-body">
+      <span class="tag-pill">Featured</span>
+      <h3><a href="{{ featured.url | relative_url }}">{{ featured.title }}</a></h3>
+      <p>{{ featured.excerpt | strip_html | truncate: 180 }}</p>
+      <div class="post-date">{{ featured.date | date: "%B %-d, %Y" }}</div>
+      <a class="read-more" href="{{ featured.url | relative_url }}">Read the guide &rarr;</a>
+    </div>
+  </article>
+</section>
+{% endif %}
+
+<section class="section">
+  <div class="section-head">
+    <span class="kicker">Browse by pet</span>
+    <h2>Who are you caring for?</h2>
+    <p>Pick a lane — every guide is written for US pet owners, with the gear and rules that apply here.</p>
+  </div>
+  <div class="cat-grid">
+    <a class="cat-card" href="{{ '/dogs/' | relative_url }}">
+      <img src="https://images.unsplash.com/photo-1552053831-71594a27632d?auto=format&fit=crop&w=900&q=80" alt="Golden retriever" loading="lazy">
+      <div class="cat-card-body">
+        <h3>Dogs</h3>
+        <p>Care, training, gear and safety — plus breed-by-breed guides.</p>
+        <span class="cat-cta">Explore dog guides &rarr;</span>
+      </div>
+    </a>
+    <a class="cat-card" href="{{ '/cats/' | relative_url }}">
+      <img src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&w=900&q=80" alt="Tabby cat" loading="lazy">
+      <div class="cat-card-body">
+        <h3>Cats</h3>
+        <p>Care, behaviour and gear — plus breed-by-breed guides.</p>
+        <span class="cat-cta">Explore cat guides &rarr;</span>
+      </div>
+    </a>
+    <a class="cat-card" href="{{ '/aquarium/' | relative_url }}">
+      <img src="https://images.unsplash.com/photo-1522069169874-c58ec4b76be5?auto=format&fit=crop&w=900&q=80" alt="Betta fish in an aquarium" loading="lazy">
+      <div class="cat-card-body">
+        <h3>Aquarium</h3>
+        <p>Freshwater setup, water care and beginner fish species.</p>
+        <span class="cat-cta">Explore aquarium guides &rarr;</span>
+      </div>
+    </a>
+  </div>
+</section>
+
+<section class="section">
+  <div class="section-head">
+    <span class="kicker">Breed &amp; species explorer</span>
+    <h2>Types of pets, one guide at a time</h2>
+    <p>Every Tuesday and Friday we publish a new breed or species guide — researched properly, written for US owners.</p>
+  </div>
   <div class="types-grid">
     <a class="type-card" href="{{ '/types-of-dogs/' | relative_url }}">
       <div class="type-icon">&#128054;</div>
       <h3>Types of Dogs</h3>
       <p>Breed-by-breed care guides for US dog owners.</p>
+      <div class="breed-chips"><span>French Bulldog</span><span>Golden Retriever</span><span>Labrador</span></div>
     </a>
     <a class="type-card" href="{{ '/types-of-cats/' | relative_url }}">
       <div class="type-icon">&#128049;</div>
       <h3>Types of Cats</h3>
       <p>Breed-by-breed care guides for US cat owners.</p>
+      <div class="breed-chips"><span>Ragdoll</span><span>Maine Coon</span><span>Siamese</span></div>
     </a>
     <a class="type-card" href="{{ '/types-of-freshwater-fishes/' | relative_url }}">
       <div class="type-icon">&#128031;</div>
       <h3>Types of Freshwater Fishes</h3>
       <p>Species guides for beginner freshwater aquariums.</p>
+      <div class="breed-chips"><span>Neon Tetra</span><span>Betta</span><span>Guppy</span></div>
     </a>
   </div>
 </section>
 
 <section class="post-grid-wrap" id="latest-guides">
   <h2>Latest guides</h2>
-  {% if site.posts.size > 0 %}
+  {% assign rest = site.posts | offset: 1 %}
+  {% if rest.size > 0 %}
   <div class="post-grid">
-    {% for post in site.posts %}
+    {% for post in rest %}
     <article class="post-card">
       {% if post.image %}
-      <a href="{{ post.url | relative_url }}"><img src="{{ post.image }}" alt="{{ post.title }}"></a>
+      <a href="{{ post.url | relative_url }}"><img src="{{ post.image }}" alt="{{ post.title }}" loading="lazy"></a>
       {% endif %}
       <div class="post-card-body">
         {% assign cat = post.categories | first %}
@@ -62,6 +133,6 @@ layout: default
     {% endfor %}
   </div>
   {% else %}
-  <p class="empty-note">Our first guides are on the way — check back soon.</p>
+  <p class="empty-note">More guides land every Sunday — the next ones are already being written.</p>
   {% endif %}
 </section>

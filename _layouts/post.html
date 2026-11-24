@@ -1,9 +1,12 @@
 ---
 layout: default
 ---
+<div class="progress-bar" id="progressBar" aria-hidden="true"></div>
 <article class="narrow">
   <h1>{{ page.title }}</h1>
-  <p class="byline">By Laurenvo Pet Care USA &middot; {{ page.date | date: "%B %-d, %Y" }}</p>
+  {% assign words = content | number_of_words %}
+  {% assign minutes = words | divided_by: 180 | plus: 1 %}
+  <p class="byline">By Laurenvo Pet Care USA <span class="dot">&middot;</span> {{ page.date | date: "%B %-d, %Y" }} <span class="dot">&middot;</span> {{ minutes }} min read</p>
   {% if page.image %}
   <img class="featured-img" src="{{ page.image }}" alt="{{ page.title }}">
   {% endif %}
@@ -13,3 +16,16 @@ layout: default
   </div>
   <p><a href="{{ '/' | relative_url }}">&larr; Back to all guides</a></p>
 </article>
+<script>
+(function () {
+  var bar = document.getElementById('progressBar');
+  if (!bar) return;
+  function onScroll() {
+    var h = document.documentElement;
+    var max = h.scrollHeight - h.clientHeight;
+    bar.style.width = (max > 0 ? (h.scrollTop / max) * 100 : 0) + '%';
+  }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+})();
+</script>

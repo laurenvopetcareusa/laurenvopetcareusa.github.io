@@ -19,6 +19,12 @@ Practical, honest guides for pet owners across the United States:
 
 New guides land here every Sunday, alongside our other blogs on [Blogger](https://laurenvopetcareusa.blogspot.com/), [WordPress.com](https://laurenvopetcareusa.wordpress.com/), [Substack](https://laurenvopetcareusa.substack.com/) and [Tumblr](https://laurenvopetcareusa.tumblr.com/). Each site carries its own unique articles — never word-for-word copies.
 
+> Good pet care isn't about buying the most stuff. It's about knowing what your pet actually needs — and when to ask a vet.
+
+<div class="lv-tip" markdown="1">
+**Tip:** Start with one guide at a time. Pick your pet's category above, read the newest guide, and put one thing into practice this week.
+</div>
+
 ## Why GitHub Pages?
 
 Because it's fast, free and fully ours. No ads, no platform rules changing under our feet — just a clean, quick blog that loads the same on any device.
