@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Welcome to Laurenvo Pet Care USA"
-date: 2026-11-24 08:00:00 -0500
+date: 2026-11-24 00:00:00 -0500
 categories: [general]
 image: https://images.unsplash.com/photo-1548199973-03cce0bbc87b?auto=format&fit=crop&w=1200&q=80
 description: "Welcome to Laurenvo Pet Care USA — practical pet care guides for dogs, cats and aquarium pets across the United States."
